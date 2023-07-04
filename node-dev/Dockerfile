@@ -1,5 +1,11 @@
 FROM node:lts-slim
 
-EXPOSE 3000
+RUN useradd -m -d /home/devel -s /bin/bash -N -G users -u 1034 devel
 
-WORKDIR /devel
+USER devel    
+
+WORKDIR /home/devel
+
+ENTRYPOINT [ "bash" ]
+
+EXPOSE 3000
