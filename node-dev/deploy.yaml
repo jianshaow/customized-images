@@ -20,13 +20,13 @@ spec:
         imagePullPolicy: Always
         ports:
         - containerPort: 3000
-      volumeMounts:
-      - mountPath: /home/devel
-        name: devel-home
-    volumes:
-    - name: devel-home
-      persistentVolumeClaim:
-        claimName: devel-home-pvc
+        volumeMounts:
+        - mountPath: /home/devel
+          name: devel-home
+      volumes:
+      - name: devel-home
+        persistentVolumeClaim:
+          claimName: devel-home-pvc
 ---
 apiVersion: v1
 kind: Service
