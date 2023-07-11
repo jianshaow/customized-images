@@ -1,0 +1,43 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: node-dev
+  namespace: devel
+spec:
+  selector:
+    matchLabels:
+      app: node-dev
+  replicas: 1
+  template:
+    metadata:
+      labels:
+        app: node-dev
+    spec:
+      restartPolicy: Always
+      imagePullPolicy: Always
+      containers:
+      - name: main
+        image: jianshao/node-dev:lts-slim
+        ports:
+        - containerPort: 3000
+    volumeMounts:
+    - mountPath: /home/devel
+      name: devel-home
+  volumes:
+  - name: devel-home
+    persistentVolumeClaim:
+      claimName: devel-home-pvc
+---
+apiVersion: v1
+kind: Service
+metadata:
+  name: node-dev
+  namespace: devel
+  labels:
+    app: node-dev
+spec:
+  ports:
+  - name: http
+    port: 3000
+  selector:
+    app: node-dev
