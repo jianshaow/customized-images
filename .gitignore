@@ -1,2 +1,2 @@
 *.code-workspace
-node-dev/docker-compose.env
+node-dev/.env
