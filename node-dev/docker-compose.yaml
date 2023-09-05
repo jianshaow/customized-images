@@ -1,0 +1,11 @@
+version: "3"
+services:
+  portainer:
+    image: jianshao/node-dev:lts-slim
+    container_name: node-dev
+    restart: unless-stopped
+    command: ['npm', '--prefix', '/home/devel/workspace', 'run', 'start']
+    volumes:
+      - ${workspace}:/home/devel/workspace
+    ports:
+      - 3000:3000
