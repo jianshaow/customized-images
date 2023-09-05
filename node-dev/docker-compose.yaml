@@ -1,6 +1,6 @@
 version: "3"
 services:
-  portainer:
+  node-dev:
     image: jianshao/node-dev:lts-slim
     container_name: node-dev
     restart: unless-stopped
