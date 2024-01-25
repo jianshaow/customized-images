@@ -1,7 +1,7 @@
 ARG BASE_IMAGE=python
 ARG TAG=3.11-slim
 
-FROM ${BASE_IMAGE}:${TAG} as dl-dev-base
+FROM ${BASE_IMAGE}:${TAG}
 
 COPY apt-install.sh packages.txt requirements.txt /
 RUN /apt-install.sh /packages.txt && \

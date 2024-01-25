@@ -1,4 +1,4 @@
-# node-dev
+# dl-dev-base
 
 ~~~ shell
 export image_tag=3.11-slim
