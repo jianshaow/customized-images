@@ -5,6 +5,7 @@ RUN ./apt-install.sh packages.txt && \
     npm install -g npm && npm install -g serve
 
 USER node
+ENV HOME /home/node
 WORKDIR $HOME
 
 EXPOSE 3000
