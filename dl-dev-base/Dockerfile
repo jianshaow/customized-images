@@ -9,7 +9,8 @@ RUN /apt-install.sh /packages.txt && \
 USER devel
 ENV HOME=/home/devel
 ENV PATH=$HOME/.local/bin:$PATH
+ENV PIP_INDEX_URL=https://pypi.tuna.tsinghua.edu.cn/simple
 
-RUN pip install --no-cache-dir --upgrade pip -i https://pypi.tuna.tsinghua.edu.cn/simple && \
-    pip install --no-cache-dir -r /requirements.txt -i https://pypi.tuna.tsinghua.edu.cn/simple
+RUN pip install --no-cache-dir --upgrade pip && \
+    pip install --no-cache-dir -r /requirements.txt
 WORKDIR /workspaces
