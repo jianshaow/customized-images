@@ -3,17 +3,11 @@ ARG TAG=3.11-slim
 
 FROM ${BASE_IMAGE}:${TAG}
 
-ARG HTTP_PROXY=""
-ARG HTTPS_PROXY=""
-ARG NO_PROXY=""
-ENV HTTP_PROXY=${HTTP_PROXY}
-ENV HTTPS_PROXY=${HTTPS_PROXY}
-ENV NO_PROXY=${NO_PROXY}
-
-ARG PIP_INDEX_URL=""
-ENV PIP_INDEX_URL=${PIP_INDEX_URL}
-
 RUN useradd -ms /bin/bash devel && \
     mkdir /workspaces
+
+USER devel
+ENV HOME=/home/devel
+ENV PATH=$HOME/.local/bin:$PATH
 
 WORKDIR /workspaces
