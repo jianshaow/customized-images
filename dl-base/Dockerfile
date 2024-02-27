@@ -1,4 +1,4 @@
-FROM python:3.11-slim
+FROM python:3.11-slim-bullseye
 
 RUN useradd -ms /bin/bash devel && \
     mkdir /workspaces
