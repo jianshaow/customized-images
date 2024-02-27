@@ -1,16 +1,14 @@
-ARG BASE_IMAGE=python
+ARG BASE_IMAGE=jianshao/dl-base
 ARG TAG=3.11-slim
 
 FROM ${BASE_IMAGE}:${TAG}
 
-COPY apt-install.sh packages.txt requirements.txt /
-RUN /apt-install.sh /packages.txt && \
-    useradd -ms /bin/bash devel
+COPY apt-install.sh packages.txt requirements.txt ./
+RUN ./apt-install.sh packages.txt
+
 USER devel
 ENV HOME=/home/devel
 ENV PATH=$HOME/.local/bin:$PATH
-ENV PIP_INDEX_URL=https://pypi.tuna.tsinghua.edu.cn/simple
 
 RUN pip install --no-cache-dir --upgrade pip && \
     pip install --no-cache-dir -r /requirements.txt
-WORKDIR /workspaces
