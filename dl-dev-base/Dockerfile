@@ -1,15 +1,9 @@
-ARG BASE_IMAGE=jianshao/dl-base
-ARG TAG=3.11-slim
-
-FROM ${BASE_IMAGE}:${TAG}
+FROM jianshao/dl-base:3.11-slim
 
 COPY apt-install.sh packages.txt requirements.txt ./
 USER root
 RUN ./apt-install.sh packages.txt
 USER devel
-
-ARG PIP_INDEX_URL=""
-ENV PIP_INDEX_URL=${PIP_INDEX_URL}
 
 RUN pip install --no-cache-dir --upgrade pip && \
     pip install --no-cache-dir -r requirements.txt
