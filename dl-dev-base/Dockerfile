@@ -1,4 +1,4 @@
-FROM jianshao/dl-base:3.11-slim
+FROM jianshao/dl-base:3.11
 
 COPY apt-install.sh packages.txt requirements.txt ./
 USER root
