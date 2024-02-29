@@ -1,2 +1,5 @@
+iproute2
+openssh-client
+git
 python3-tk
 graphviz
