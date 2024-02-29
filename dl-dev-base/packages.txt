@@ -1,5 +1,7 @@
 iproute2
 openssh-client
+nc
+curl
 git
 python3-tk
 graphviz
