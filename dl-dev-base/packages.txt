@@ -1,4 +1,3 @@
-build-essential
 iproute2
 openssh-client
 netcat-openbsd
