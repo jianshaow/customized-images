@@ -2,8 +2,9 @@
 
 ~~~ shell
 export torch_ver=2.2.1
-docker build -t jianshao/torch-rt-base:$torch_ver-cpu . -f Dockerfile.cpu
-docker build -t jianshao/torch-rt-base:$torch_ver-gpu . -f Dockerfile.gpu
+docker build --build-arg PYPI_INDEX_ARG="-i https://download.pytorch.org/whl/cpu" \
+             -t jianshao/torch-rt-base:$torch_ver-cpu .
+docker build -t jianshao/torch-rt-base:$torch_ver-gpu .
 docker push jianshao/torch-rt-base:$torch_ver-cpu
 docker push jianshao/torch-rt-base:$torch_ver-gpu
 ~~~
