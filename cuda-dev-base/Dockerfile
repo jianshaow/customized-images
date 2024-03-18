@@ -1,4 +1,4 @@
-FROM nvidia/cuda:12.3.2-devel-ubuntu22.04
+FROM nvidia/cuda:12.3.2-runtime-ubuntu22.04
 
 COPY apt-install.sh packages.txt ./
 RUN ./apt-install.sh packages.txt && \
