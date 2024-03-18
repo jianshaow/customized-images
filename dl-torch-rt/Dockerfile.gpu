@@ -1,4 +1,4 @@
-FROM jianshao/dl-rt-base:3.11
+FROM jianshao/cuda-rt-base:12.3
 
 COPY requirements.txt ./
 
