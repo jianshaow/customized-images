@@ -1,6 +1,7 @@
+ARG TORCH_VER=2.3.0
 ARG IMAGE_TYPE=cpu
 
-FROM jianshao/torch-rt-base:2.2.1-${IMAGE_TYPE}
+FROM jianshao/torch-rt-base:${TORCH_VER}-${IMAGE_TYPE}
 
 USER root
 COPY apt-install.sh packages.txt /root/
