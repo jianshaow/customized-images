@@ -1,5 +1,7 @@
 iproute2
 openssh-client
-netcat-openbsd
+netcat
 curl
 git
+gradle
+maven
