@@ -4,8 +4,8 @@ ARG IMAGE_TYPE=cpu
 FROM jianshao/torch-rt-base:${TORCH_VER}-${IMAGE_TYPE}
 
 USER root
-COPY apt-install.sh packages.txt /root/
-RUN /root/apt-install.sh /root/packages.txt
+COPY packages.txt /
+RUN /apt-install.sh /packages.txt
 USER devel
 
 COPY requirements.txt ./
