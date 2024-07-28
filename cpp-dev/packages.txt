@@ -4,3 +4,4 @@ netcat
 curl
 git
 g++
+gdb
