@@ -1,4 +1,4 @@
-# torch-dev-base
+# java-dev
 
 ~~~ shell
 export java_ver=21
