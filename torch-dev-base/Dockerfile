@@ -1,7 +1,6 @@
-ARG TORCH_VER=2.3.0
-ARG IMAGE_TYPE=cpu
+ARG TORCH_VER=2.3.1
 
-FROM jianshao/torch-rt-base:${TORCH_VER}-${IMAGE_TYPE}
+FROM jianshao/torch-rt-base:${TORCH_VER}
 
 USER root
 COPY packages.txt /

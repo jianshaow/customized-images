@@ -2,6 +2,6 @@ FROM jianshao/dl-rt-base:3.11
 
 COPY requirements.txt ./
 
-ARG PYPI_INDEX_ARG=""
+ARG TORCH_VER=2.3.1
 RUN pip install --no-cache-dir --upgrade pip && \
-    pip install --no-cache-dir -r requirements.txt ${PYPI_INDEX_ARG}
+    pip install --no-cache-dir torch==${TORCH_VER}
