@@ -1,4 +1,7 @@
-FROM jianshao/python-base:3.11-slim
+ARG BASE_IMAGE=jianshao/python-base
+ARG TAG=3.11-slim
+
+FROM ${BASE_IMAGE}:${TAG}
 
 COPY requirements.txt ./
 
