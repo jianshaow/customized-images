@@ -3,6 +3,7 @@ ARG TAG=3.11-slim
 
 FROM ${BASE_IMAGE}:${TAG}
 
+COPY apt-install.sh /
 RUN useradd -ms /bin/bash devel
 
 USER devel
