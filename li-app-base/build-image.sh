@@ -5,7 +5,9 @@ if [ "$python_ver" == "" ]; then
 fi
 echo "Using python version: ${python_ver}"
 
-docker build -t jianshao/li-app-base:latest . --build-arg TAG=$python_ver-slim
+docker pull jianshao/python-base:${python_ver}-slim
+
+docker build -t jianshao/li-app-base:latest . --build-arg TAG=${python_ver}-slim
 
 llamaindex_ver=$(docker run --rm jianshao/li-app-base:latest pip list | grep llama-index-core| awk '{print $2}')
 echo "Using llama-index version ${llamaindex_ver}"
