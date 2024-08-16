@@ -12,4 +12,3 @@ llama-index-multi-modal-llms-openai
 llama-index-multi-modal-llms-gemini
 llama-index-multi-modal-llms-ollama
 llama-index-agent-openai
-flask>=3.0
