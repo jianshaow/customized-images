@@ -1,4 +1,4 @@
-ARG LLAMAINDEX_VER=2.3.1
+ARG LLAMAINDEX_VER=latest
 
 FROM jianshao/li-app-base:${LLAMAINDEX_VER}
 
