@@ -5,15 +5,17 @@ if [ "$python_ver" == "" ]; then
 fi
 echo "Using python version: ${python_ver}"
 
-docker pull jianshao/python-base:${python_ver}-slim
+base_image=jianshao/python-base
+docker pull ${base_image}:${python_ver}-slim
 
-docker build -t jianshao/li-app-base:latest . --build-arg TAG=${python_ver}-slim
+image=jianshao/li-app-base
+docker build -t ${image}:latest . --build-arg TAG=${python_ver}-slim
 
-llamaindex_ver=$(docker run --rm jianshao/li-app-base:latest pip list | grep llama-index-core| awk '{print $2}')
-echo "Using llama-index version ${llamaindex_ver}"
+li_ver=$(docker run --rm ${image}:latest pip list | grep llama-index-core | awk '{print $2}')
+echo "Using llama-index version ${li_ver}"
 
-docker tag jianshao/li-app-base:latest jianshao/li-app-base:${llamaindex_ver}
-docker push jianshao/li-app-base:latest
-docker push jianshao/li-app-base:${llamaindex_ver}
+docker tag ${image}:latest ${image}:${li_ver}
+docker push ${image}:latest
+docker push ${image}:${li_ver}
 
 echo "Done"
