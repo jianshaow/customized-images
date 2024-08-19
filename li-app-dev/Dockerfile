@@ -1,6 +1,7 @@
-ARG LLAMAINDEX_VER=latest
+ARG BASE_IMAGE=jianshao/li-app-base
+ARG TAG=latest
 
-FROM jianshao/li-app-base:${LLAMAINDEX_VER}
+FROM ${BASE_IMAGE}:${TAG}
 
 USER root
 COPY packages.txt /
