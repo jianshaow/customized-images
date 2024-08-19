@@ -1,9 +1,9 @@
 ARG BASE_IMAGE=jianshao/llm-api-base
 ARG TAG=latest
-ARG VERSION=snapshot
 
 FROM ${BASE_IMAGE}:${TAG}
 
+ARG VERSION=snapshot
 LABEL version=${VERSION}
 
 USER root
