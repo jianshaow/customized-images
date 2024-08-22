@@ -1,0 +1,8 @@
+langchain
+langchainhub
+langchain-core
+langchain-cli
+langchain-chroma
+langchain-openai
+langchain-community
+langchain-google-genai
