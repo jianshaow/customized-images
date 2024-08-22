@@ -9,7 +9,7 @@ echo "Using langchain version ${lc_ver}"
 image=jianshao/lc-app-dev
 docker build -t ${image}:latest . --build-arg TAG=${lc_ver}
 
-docker tag ${image}:${image}:${lc_ver}
+docker tag ${image}:latest ${image}:${lc_ver}
 docker push ${image}:latest
 docker push ${image}:${lc_ver}
 
