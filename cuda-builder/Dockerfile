@@ -1,11 +1,10 @@
-ARG BASE_IMAGE=python
-ARG TAG=3.11-slim
+ARG BASE_IMAGE=nvidia/cuda
+ARG TAG=12.5.1-devel-ubuntu24.04
 
 FROM ${BASE_IMAGE}:${TAG}
 
-ARG PKG_FILE=packages.txt
-COPY apt-install.sh ${PKG_FILE} ./
-RUN ./apt-install.sh ${PKG_FILE} && \
+COPY apt-install.sh packages.txt ./
+RUN ./apt-install.sh packages.txt && \
     useradd -ms /bin/bash devel
 
 USER devel
