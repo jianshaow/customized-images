@@ -1,4 +1,7 @@
-FROM node:lts-slim
+ARG BASE_IMAGE=node
+ARG TAG=lts-slim
+
+FROM ${BASE_IMAGE}:${TAG}
 
 COPY apt-install.sh packages.txt ./
 RUN ./apt-install.sh packages.txt && \
