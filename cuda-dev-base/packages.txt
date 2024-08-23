@@ -1,6 +1,0 @@
-python3-pip
-iproute2
-openssh-client
-netcat
-curl
-git
