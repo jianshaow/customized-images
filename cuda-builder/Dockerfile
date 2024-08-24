@@ -1,5 +1,5 @@
 ARG BASE_IMAGE=nvidia/cuda
-ARG TAG=12.5.1-devel-ubuntu24.04
+ARG TAG=12.5.1-devel-ubuntu22.04
 
 FROM ${BASE_IMAGE}:${TAG}
 
