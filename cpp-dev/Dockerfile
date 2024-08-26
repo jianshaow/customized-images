@@ -1,4 +1,7 @@
-FROM ubuntu:22.04
+ARG BASE_IMAGE=ubuntu
+ARG TAG=22.04
+
+FROM ${BASE_IMAGE}:${TAG}
 
 COPY apt-install.sh packages.txt ./
 RUN ./apt-install.sh packages.txt && \
