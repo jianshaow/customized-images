@@ -3,6 +3,7 @@ langchainhub
 langchain-core
 langchain-cli
 langchain-chroma
-langchain-openai
 langchain-community
+langchain-ollama
+langchain-openai
 langchain-google-genai
