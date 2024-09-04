@@ -1,17 +1,14 @@
-ARG BASE_IMAGE=python
+ARG BASE_IMAGE=jianshao/python-base
 ARG TAG=3.11-slim
 
 FROM ${BASE_IMAGE}:${TAG}
 
-COPY apt-install.sh packages.txt requirements.txt ./
-RUN ./apt-install.sh packages.txt && \
-    useradd -ms /bin/bash devel
+USER root
+COPY packages.txt /
+RUN /apt-install.sh /packages.txt
 
 USER devel
-ENV HOME=/home/devel
-ENV PATH=$HOME/.local/bin:$PATH
+COPY requirements.txt ./
 
 RUN pip install --no-cache-dir --upgrade pip setuptools wheel && \
     pip install --no-cache-dir -r requirements.txt
-
-WORKDIR $HOME
