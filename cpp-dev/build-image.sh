@@ -10,7 +10,7 @@ docker pull ${base_image}:${ubuntu_ver}
 
 image=jianshao/cpp-dev
 
-docker build -t ${image}:latest . --build-arg TAG=${ubuntu_ver}
+docker build -t ${image}:latest . --build-arg TAG=${ubuntu_ver} $*
 
 gpp_ver=$(docker run --rm ${image}:latest g++ --version | grep g++ | awk '{print $4}')
 echo "Using g++ version ${gpp_ver}"

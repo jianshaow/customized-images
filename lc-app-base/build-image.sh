@@ -9,7 +9,7 @@ base_image=jianshao/python-base
 docker pull ${base_image}:${python_ver}-slim
 
 image=jianshao/lc-app-base
-docker build -t ${image}:latest . --build-arg TAG=${python_ver}-slim
+docker build -t ${image}:latest . --build-arg TAG=${python_ver}-slim $*
 
 lc_ver=$(docker run --rm ${image}:latest pip list | grep langchain-core | awk '{print $2}')
 echo "Using langchain version ${lc_ver}"

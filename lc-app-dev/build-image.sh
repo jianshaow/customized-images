@@ -7,7 +7,7 @@ lc_ver=$(docker run --rm ${base_image}:latest pip list | grep langchain-core | a
 echo "Using langchain version ${lc_ver}"
 
 image=jianshao/lc-app-dev
-docker build -t ${image}:latest . --build-arg TAG=${lc_ver}
+docker build -t ${image}:latest . --build-arg TAG=${lc_ver} $*
 
 docker tag ${image}:latest ${image}:${lc_ver}
 docker push ${image}:latest
