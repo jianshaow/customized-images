@@ -1,4 +1,4 @@
-FROM jianshao/dl-rt-base:3.11
+FROM jianshao/python-base:3.11-slim
 
 ARG TORCH_VER=2.3.1
 RUN pip install --no-cache-dir --upgrade pip && \
