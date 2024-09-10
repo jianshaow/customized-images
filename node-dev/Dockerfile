@@ -5,7 +5,7 @@ FROM ${BASE_IMAGE}:${TAG}
 
 COPY apt-install.sh packages.txt ./
 RUN ./apt-install.sh packages.txt && \
-    npm install -g npm pnpm serve
+    npm install -g pnpm serve
 
 USER node
 ENV HOME /home/node
