@@ -1,6 +1,6 @@
 # python-base
 
 ~~~ shell
-export python_ver=3.11
+export python_ver=3.12
 ./build-image.sh
 ~~~
