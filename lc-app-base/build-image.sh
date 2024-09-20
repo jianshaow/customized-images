@@ -1,7 +1,7 @@
 #!/bin/bash
 
 if [ "$python_ver" == "" ]; then
-    python_ver=3.11
+    python_ver=3.12
 fi
 echo "Using python version: ${python_ver}"
 
