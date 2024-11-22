@@ -4,12 +4,12 @@
 
 ### Build
 ~~~ shell
-export ollama_ver=0.3.12
+export ollama_ver=0.4.3
 ./build-image.sh
 ~~~
 ### Test
 ~~~ shell
-export nextchat_ver=2.15.5
+export nextchat_ver=2.15.8
 # run a ollama server
 docker run --name ollama-server -it --rm -p 11434:11434 \
            -v $HOME/.ollama:/home/devel/.ollama \

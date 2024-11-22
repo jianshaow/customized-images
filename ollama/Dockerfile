@@ -1,5 +1,5 @@
 ARG BASE_IMAGE=ollama/ollama
-ARG TAG=0.3.8
+ARG TAG=0.4.3
 
 FROM ${BASE_IMAGE}:${TAG}
 
