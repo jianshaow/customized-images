@@ -11,4 +11,6 @@ COPY packages.txt /
 RUN /apt-install.sh /packages.txt
 USER devel
 
+COPY requirements.txt ./
+RUN pip install --no-cache-dir -r requirements.txt
 RUN pip install --no-cache-dir flask flask_cors

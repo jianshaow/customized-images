@@ -1,0 +1,4 @@
+poetry
+matplotlib
+pydot_ng
+imageio
