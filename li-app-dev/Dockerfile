@@ -8,4 +8,6 @@ COPY packages.txt /
 RUN /apt-install.sh /packages.txt
 USER devel
 
-RUN pip install --no-cache-dir flask flask_cors
+COPY requirements.txt ./
+RUN pip install --no-cache-dir --upgrade pip setuptools wheel && \
+    pip install --no-cache-dir -r requirements.txt
