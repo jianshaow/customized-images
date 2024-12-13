@@ -1,3 +1,6 @@
 poetry
+matplotlib
+pydot_ng
+imageio
 flask
 flask_cors
