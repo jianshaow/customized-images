@@ -1,4 +1,4 @@
-ARG TORCH_VER=2.3.1
+ARG TORCH_VER=2.4.1
 
 FROM jianshao/torch-rt-base:${TORCH_VER}
 
