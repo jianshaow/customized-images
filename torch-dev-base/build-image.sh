@@ -5,10 +5,18 @@ if [ "$torch_ver" == "" ]; then
 fi
 echo "Using torch version: ${torch_ver}"
 
-base_image=jianshao/torch-rt-base
-docker pull ${base_image}:${torch_ver}
+if [ "$cuda_tag" == "" ]; then
+    cuda_tag=cu124
+fi
+echo "Using cuda tag: ${cuda_tag}"
 
-docker build -t jianshao/torch-dev-base:${torch_ver} . --build-arg TORCH_VER=${torch_ver} $*
-docker push jianshao/torch-dev-base:${torch_ver}
+base_image=jianshao/torch-rt-base
+base_tag=${torch_ver}-${cuda_tag}
+docker pull ${base_image}:${base_tag}
+
+image=jianshao/torch-dev-base
+tag=${torch_ver}-${cuda_tag}
+docker build -t ${image}:${base_tag} . --build-arg BASE_VER=${base_tag} $*
+docker push ${image}:${base_tag}
 
 echo "Done"

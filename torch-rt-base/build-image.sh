@@ -16,7 +16,7 @@ echo "Using torch version: ${torch_ver}"
 if [ "$cuda_tag" == "" ]; then
     cuda_tag=cu124
 fi
-echo "Using torch version: ${torch_ver}"
+echo "Using cuda tag: ${cuda_tag}"
 
 image=jianshao/torch-rt-base
 tag=${torch_ver}-${cuda_tag}

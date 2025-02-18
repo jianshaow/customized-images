@@ -1,6 +1,6 @@
-ARG TORCH_VER=2.4.1
+ARG BASE_VER=2.4.1
 
-FROM jianshao/torch-rt-base:${TORCH_VER}
+FROM jianshao/torch-rt-base:${BASE_VER}
 
 USER root
 COPY apt-install.sh packages.txt /
