@@ -1,6 +1,6 @@
-ARG BASE_VER=2.4.1
+ARG TAG=2.4.1-cu124
 
-FROM jianshao/torch-rt-base:${BASE_VER}
+FROM jianshao/torch-rt-base:${TAG}
 
 USER root
 RUN --mount=type=bind,source=packages.txt,target=packages.txt \
