@@ -2,7 +2,7 @@
 
 base_image=jianshao/trfs-rt-base
 if [ "$trfs_ver" == "" ]; then
-    trfs_ver=$(docker run --rm ${image}:latest pip list | grep transformers | awk '{print $2}')
+    trfs_ver=$(docker run --rm ${base_image}:latest pip list | grep transformers | awk '{print $2}')
 else
     docker pull ${base_image}:${trfs_ver}
 fi
