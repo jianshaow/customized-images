@@ -22,6 +22,6 @@ echo "Using transformers version ${trfs_ver}"
 
 docker tag ${image}:latest ${image}:${trfs_ver}
 docker push ${image}:latest
-docker push ${image}:${base_tag}
+docker push ${image}:${trfs_ver}
 
 echo "Done"
