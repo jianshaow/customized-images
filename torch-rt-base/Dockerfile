@@ -8,3 +8,6 @@ ARG CUDA_TAG=cu124
 RUN pip install --no-cache-dir --upgrade pip && \
     pip install --no-cache-dir torch==${TORCH_VER} torchvision torchaudio \
     --index-url https://download.pytorch.org/whl/${CUDA_TAG}
+
+ENV NVIDIA_DRIVER_CAPABILITIES=compute,utility
+ENV NVIDIA_VISIBLE_DEVICES=all
