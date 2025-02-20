@@ -10,6 +10,8 @@ USER devel
 ENV HOME=/home/devel
 ENV PATH=$HOME/.local/bin:$PATH
 
-RUN pip install --no-cache-dir --upgrade pip setuptools wheel
+RUN --mount=type=bind,source=requirements.txt,target=requirements.txt \
+    pip install --no-cache-dir --upgrade pip setuptools wheel && \
+    pip install --no-cache-dir -r requirements.txt
 
 WORKDIR $HOME
