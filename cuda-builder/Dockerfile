@@ -8,7 +8,7 @@ ARG NVCC_PKG=cuda-nvcc-12-4
 
 ADD ${KEYRING_DEB_URL} cuda-keyring_all.deb
 RUN --mount=type=bind,source=packages.txt,target=packages.txt \
-    dpkg -i cuda-keyring_all.deb && rm cuda-keyring_all.deb && \
+    dpkg -i cuda-keyring_all.deb && rm cuda-keyring_all.deb && apt-get update && \
     apt-get install -y --no-install-recommends ${NVCC_PKG} && \
     /apt-install.sh packages.txt && useradd -ms /bin/bash devel
 
