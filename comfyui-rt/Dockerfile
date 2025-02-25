@@ -22,4 +22,4 @@ RUN pip install --no-cache-dir -r /tmp/comfyui_requirements.txt && \
     pip install --no-cache-dir /tmp/*.whl && \
     rm -f /tmp/*
 
-WORKDIR $HOME/comfyui
+WORKDIR $HOME/comfyanonymous/ComfyUI
