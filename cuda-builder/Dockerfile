@@ -1,5 +1,5 @@
-ARG BASE_IMAGE=python
-ARG TAG=3.12-slim
+ARG BASE_IMAGE=jianshao/py-builder
+ARG TAG=3.12
 
 FROM ${BASE_IMAGE}:${TAG}
 
@@ -7,16 +7,9 @@ ARG KEYRING_DEB_URL=https://developer.download.nvidia.com/compute/cuda/repos/deb
 ARG NVCC_PKG=cuda-nvcc-12-4
 
 ADD ${KEYRING_DEB_URL} cuda-keyring_all.deb
+USER root
 RUN dpkg -i cuda-keyring_all.deb && rm cuda-keyring_all.deb && apt-get update && \
-    apt-get install -y --no-install-recommends build-essential && \
     apt-get install -y --no-install-recommends ${NVCC_PKG} && \
-    apt-get clean && rm -rf /var/lib/apt/lists/* && \
-    useradd -ms /bin/bash devel
+    apt-get clean && rm -rf /var/lib/apt/lists/*
 
 USER devel
-ENV HOME=/home/devel
-ENV PATH=$HOME/.local/bin:$PATH
-
-RUN pip install --no-cache-dir --upgrade pip setuptools wheel
-
-WORKDIR $HOME

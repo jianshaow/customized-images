@@ -1,4 +1,4 @@
-# dl-builder
+# cuda-builder
 
 ~~~ shell
 ./build-image.sh
