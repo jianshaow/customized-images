@@ -17,8 +17,10 @@ ADD --chown=devel:devel https://github.com/comfyanonymous/ComfyUI/raw/${COMFYUI_
 ADD --chown=devel:devel https://github.com/ltdrdata/ComfyUI-Manager/raw/${COMFYUI_MGR_VER}/requirements.txt /tmp/comfyui_mgr_requirements.txt
 COPY --from=build $HOME/*.whl /tmp/
 
-RUN pip install --no-cache-dir -r /tmp/comfyui_requirements.txt && \
+RUN --mount=type=bind,source=requirements.txt,target=requirements.txt \
+    pip install --no-cache-dir -r /tmp/comfyui_requirements.txt && \
     pip install --no-cache-dir -r /tmp/comfyui_mgr_requirements.txt && \
+    pip install --no-cache-dir -r requirements.txt && \
     pip install --no-cache-dir /tmp/*.whl && \
     rm -f /tmp/*
 
