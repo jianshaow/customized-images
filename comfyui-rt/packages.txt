@@ -1,3 +1,7 @@
 libgl-dev
 libglib2.0-dev
+openssh-client
+netcat-openbsd
+curl
+wget
 git
