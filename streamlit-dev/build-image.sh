@@ -14,6 +14,7 @@ docker build -t ${image}:latest . --build-arg TAG=${python_ver} $*
 streamlit_ver=$(docker run --rm ${image}:latest pip list | grep streamlit | awk '{print $2}')
 echo "Using streamlit version ${streamlit_ver}"
 
+docker tag ${image}:latest ${image}:${streamlit_ver}
 docker push ${image}:latest
 docker push ${image}:${streamlit_ver}
 
