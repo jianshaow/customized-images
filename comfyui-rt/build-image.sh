@@ -14,7 +14,7 @@ fi
 echo "Using ComfyUI version ${comfyui_ver}"
 
 if [ "$comfyui_mgr_ver" == "" ]; then
-    comfyui_mgr_ver=3.27
+    comfyui_mgr_ver=3.27.3
 fi
 echo "Using ComfyUI Manager version ${comfyui_mgr_ver}"
 
