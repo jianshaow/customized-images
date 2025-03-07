@@ -1,19 +1,17 @@
 #!/bin/bash
 
-if [ "$image_tag" == "" ]; then
-    image_tag=lts-slim
-fi
-echo "Using node tag: ${image_tag}"
+base_tag=lts-slim
+echo "Using node tag: ${base_tag}"
 
 base_image=node
-docker pull ${base_image}:${image_tag}
+docker pull ${base_image}:${base_tag}
 
 image=jianshao/node-dev
-docker build -t ${image}:${image_tag} . --build-arg TAG=${image_tag} $*
-docker push ${image}:${image_tag}
+docker build -t ${image}:lts . --build-arg TAG=${base_tag} $*
+docker push ${image}:lts
 
 nas_image=jianshao/node-nas
-docker build -t ${nas_image}:${image_tag} . --build-arg TAG=${image_tag} -f Dockerfile.nas $*
-docker push ${nas_image}:${image_tag}
+docker build -t ${nas_image}:lts . --build-arg TAG=${base_tag} -f Dockerfile.nas $*
+docker push ${nas_image}:lts
 
 echo "Done"
