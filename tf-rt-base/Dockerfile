@@ -1,11 +1,20 @@
-ARG BASE_IMAGE=jianshao/python-base
-ARG TAG=3.12-slim
+ARG BASE_IMAGE=tensorflow/tensorflow
+ARG TAG=2.19.0
 
 FROM ${BASE_IMAGE}:${TAG}
 
-ARG TF_VER=2.19.0
-RUN pip install --no-cache-dir --upgrade pip && \
-    pip install --no-cache-dir tensorflow==${TF_VER}
+COPY apt-install.sh /
+RUN useradd -ms /bin/bash devel
+
+USER devel
+ENV HOME=/home/devel
+ENV PATH=$HOME/.local/bin:$PATH
+
+RUN --mount=type=bind,source=requirements.txt,target=requirements.txt \
+    pip install --no-cache-dir --upgrade pip setuptools wheel && \
+    pip install --no-cache-dir -r requirements.txt
 
 ENV NVIDIA_DRIVER_CAPABILITIES=compute,utility
 ENV NVIDIA_VISIBLE_DEVICES=all
+
+WORKDIR $HOME
