@@ -1,5 +1,5 @@
 ARG BASE_IMAGE=tensorflow/tensorflow
-ARG TAG=2.19.0
+ARG TAG=2.18.0
 
 FROM ${BASE_IMAGE}:${TAG}
 
