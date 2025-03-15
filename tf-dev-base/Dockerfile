@@ -1,4 +1,4 @@
-ARG TAG=2.19.0
+ARG TAG=2.18.0
 
 FROM jianshao/tf-rt-base:${TAG}
 
