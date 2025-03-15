@@ -1,7 +1,7 @@
 #!/bin/bash
 
 if [ "$tf_ver" == "" ]; then
-    tf_ver=2.18.0
+    tf_ver=2.19.0
 fi
 echo "Using tensorflow version: ${tf_ver}"
 
