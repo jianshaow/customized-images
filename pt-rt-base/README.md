@@ -1,7 +1,7 @@
-# torch-rt-base
+# pt-rt-base
 
 ~~~ shell
-# export torch_ver=2.4.1
-# export cuda_tag=cu124
+# export pt_ver=2.1.2
+# export cuda_tag=cu121
 ./build-image.sh
 ~~~

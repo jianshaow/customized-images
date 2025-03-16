@@ -1,4 +1,4 @@
-# torch-dev-base
+# pt-dev-base
 
 ~~~ shell
 ./build-image.sh

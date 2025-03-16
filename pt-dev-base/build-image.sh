@@ -3,7 +3,7 @@
 if [ "$pt_ver" == "" ]; then
     pt_ver=2.4.1
 fi
-echo "Using torch version: ${pt_ver}"
+echo "Using pytorch version: ${pt_ver}"
 
 if [ "$cuda_tag" == "" ]; then
     cuda_tag=cu124
