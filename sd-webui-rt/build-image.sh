@@ -9,7 +9,7 @@ base_image=jianshao/pt-rt-base
 docker pull ${base_image}:${pt_base_tag}
 
 if [ "$sd_webui_ver" == "" ]; then
-    sd_webui_ver=v0.3.23
+    sd_webui_ver=1.10.1
 fi
 echo "Using SD webui version ${sd_webui_ver}"
 
