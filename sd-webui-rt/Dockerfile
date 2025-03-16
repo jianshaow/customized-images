@@ -8,7 +8,7 @@ RUN --mount=type=bind,source=packages.txt,target=packages.txt \
     /apt-install.sh packages.txt
 
 USER devel
-ARG SD_WEBUI_VER=1.10.1
+ARG SD_WEBUI_VER=v1.10.1
 ADD --chown=devel:devel https://github.com/AUTOMATIC1111/stable-diffusion-webui/raw/${SD_WEBUI_VER}/requirements.txt /tmp/requirements.txt
 
 RUN --mount=type=bind,source=requirements.txt,target=requirements.txt \
