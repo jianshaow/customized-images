@@ -1,17 +1,17 @@
 #!/bin/bash
 
-if [ "$torch_ver" == "" ]; then
-    torch_ver=2.4.1
+if [ "$pt_ver" == "" ]; then
+    pt_ver=2.4.1
 fi
-echo "Using torch version: ${torch_ver}"
+echo "Using torch version: ${pt_ver}"
 
 if [ "$cuda_tag" == "" ]; then
     cuda_tag=cu124
 fi
 echo "Using cuda tag: ${cuda_tag}"
 
-base_image=jianshao/torch-rt-base
-base_tag=${torch_ver}-${cuda_tag}
+base_image=jianshao/pt-rt-base
+base_tag=${pt_ver}-${cuda_tag}
 docker pull ${base_image}:${base_tag}
 
 image=jianshao/trfs-rt-base

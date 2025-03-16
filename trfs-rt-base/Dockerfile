@@ -1,4 +1,4 @@
-ARG BASE_IMAGE=jianshao/torch-rt-base
+ARG BASE_IMAGE=jianshao/pt-rt-base
 ARG TAG=2.4.1-cu124
 
 FROM ${BASE_IMAGE}:${TAG}
