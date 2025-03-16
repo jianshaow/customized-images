@@ -1,6 +1,6 @@
 ARG TAG=2.4.1-cu124
 
-FROM jianshao/torch-rt-base:${TAG}
+FROM jianshao/pt-rt-base:${TAG}
 
 USER root
 RUN --mount=type=bind,source=packages.txt,target=packages.txt \
