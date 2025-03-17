@@ -1,5 +1,6 @@
 libgl-dev
 libglib2.0-dev
+libgoogle-perftools-dev
 openssh-client
 netcat-openbsd
 curl
