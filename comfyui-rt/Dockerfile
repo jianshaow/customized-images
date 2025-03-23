@@ -11,10 +11,10 @@ RUN --mount=type=bind,source=packages.txt,target=packages.txt \
     /apt-install.sh packages.txt
 
 USER devel
-ARG COMFYUI_VER=v0.3.23
-ARG COMFYUI_MGR_VER=3.30.2
-ADD --chown=devel:devel https://github.com/comfyanonymous/ComfyUI/raw/${COMFYUI_VER}/requirements.txt /tmp/comfyui_requirements.txt
-ADD --chown=devel:devel https://github.com/ltdrdata/ComfyUI-Manager/raw/${COMFYUI_MGR_VER}/requirements.txt /tmp/comfyui_mgr_requirements.txt
+ARG COMFYUI_VER=v0.3.27
+ARG COMFYUI_MGR_VER=3.31.6
+ADD --chown=devel:devel https://raw.githubusercontent.com/comfyanonymous/ComfyUI/${COMFYUI_VER}/requirements.txt /tmp/comfyui_requirements.txt
+ADD --chown=devel:devel https://raw.githubusercontent.com/ltdrdata/ComfyUI-Manager/${COMFYUI_MGR_VER}/requirements.txt /tmp/comfyui_mgr_requirements.txt
 COPY --from=build $HOME/*.whl /tmp/
 
 RUN --mount=type=bind,source=requirements.txt,target=requirements.txt \
