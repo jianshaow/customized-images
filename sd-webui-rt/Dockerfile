@@ -12,6 +12,7 @@ ARG SD_WEBUI_VER=v1.10.1
 ADD --chown=devel:devel https://github.com/AUTOMATIC1111/stable-diffusion-webui/raw/${SD_WEBUI_VER}/requirements_versions.txt /tmp/requirements.txt
 
 RUN --mount=type=bind,source=requirements.txt,target=requirements.txt \
+    pip install --no-cache-dir --upgrade pip && \
     pip install --no-cache-dir -r /tmp/requirements.txt && \
     pip install --no-cache-dir -r requirements.txt && \
     rm -f /tmp/*

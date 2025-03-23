@@ -18,6 +18,7 @@ ADD --chown=devel:devel https://raw.githubusercontent.com/ltdrdata/ComfyUI-Manag
 COPY --from=build $HOME/*.whl /tmp/
 
 RUN --mount=type=bind,source=requirements.txt,target=requirements.txt \
+    pip install --no-cache-dir --upgrade pip && \
     pip install --no-cache-dir -r /tmp/comfyui_requirements.txt && \
     pip install --no-cache-dir -r /tmp/comfyui_mgr_requirements.txt && \
     pip install --no-cache-dir -r requirements.txt && \
