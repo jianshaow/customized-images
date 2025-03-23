@@ -7,5 +7,5 @@ ARG VERSION=snapshot
 LABEL version=${VERSION}
 
 RUN --mount=type=bind,source=requirements.txt,target=requirements.txt \
-    pip install --no-cache-dir --upgrade pip setuptools wheel && \
+    pip install --no-cache-dir --upgrade pip && \
     pip install --no-cache-dir -r requirements.txt
