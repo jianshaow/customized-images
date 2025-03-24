@@ -9,11 +9,12 @@ fi
 base_image=jianshao/llm-api-base
 docker pull ${base_image}:latest
 
-tag=$(docker inspect --format='{{index .Config.Labels "version"}}' ${base_image})
-echo "Using llm api base version ${tag}"
+base_tag=$(docker inspect --format='{{index .Config.Labels "version"}}' ${base_image})
+echo "Using llm api base version ${base_tag}"
 
 image=jianshao/minions
-docker build -t ${image}:latest . --build-arg TAG=${tag} --build-arg VERSION=${tag} $*
+tag=$(date +%Y%m%d)
+docker build -t ${image}:latest . --build-arg TAG=${base_tag} --build-arg VERSION=${tag} $*
 
 docker tag ${image}:latest ${image}:${tag}
 docker push ${image}:latest
