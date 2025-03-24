@@ -6,6 +6,6 @@ FROM ${BASE_IMAGE}:${TAG}
 ARG VERSION=snapshot
 LABEL version=${VERSION}
 
-RUN --mount=type=bind,source=repos/minions,target=repos/minions \
-    pip install --no-cache-dir --upgrade pip && \
+COPY repos/minions repos/minions
+RUN pip install --no-cache-dir --upgrade pip && \
     pip install --no-cache-dir -e repos/minions
