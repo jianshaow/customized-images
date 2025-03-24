@@ -9,7 +9,7 @@ echo "Using llm api base version ${tag}"
 image=jianshao/llm-api-dev
 docker build -t ${image}:latest . --build-arg TAG=${tag} --build-arg VERSION=${tag} $*
 
-docker tag ${image}:latest jianshao/llm-api-dev:${tag}
+docker tag ${image}:latest ${image}:${tag}
 docker push ${image}:latest
 docker push ${image}:${tag}
 
