@@ -1,9 +1,9 @@
 #!/bin/bash
 
 if [ -d "repos/minions" ]; then
-    git clone https://github.com/HazyResearch/minions.git repos/minions
-else
     cd repos/minions; git pull; cd -
+else
+    git clone https://github.com/HazyResearch/minions.git repos/minions
 fi
 
 base_image=jianshao/llm-api-base
