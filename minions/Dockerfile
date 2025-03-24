@@ -9,3 +9,5 @@ LABEL version=${VERSION}
 COPY --chown=devel:devel repos/minions minions
 RUN pip install --no-cache-dir --upgrade pip && \
     pip install --no-cache-dir -e minions
+
+WORKDIR $HOME/minions
