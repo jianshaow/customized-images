@@ -1,6 +1,10 @@
 #!/bin/bash
 
-git clone https://github.com/HazyResearch/minions.git repos/minions
+if [ -d "repos/minions" ]; then
+    git clone https://github.com/HazyResearch/minions.git repos/minions
+else
+    cd repos/minions; git pull; cd -
+fi
 
 base_image=jianshao/llm-api-base
 docker pull ${base_image}:latest
