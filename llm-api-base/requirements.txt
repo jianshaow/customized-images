@@ -1,3 +1,4 @@
 ollama
 openai
+openai-agents
 google-generativeai
