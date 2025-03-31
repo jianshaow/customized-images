@@ -1,7 +1,7 @@
 #!/bin/bash
 
 if [ "$trfs_ver" == "" ]; then
-    trfs_ver=4.49.0
+    trfs_ver=4.50.3
 fi
 echo "Using transformers version ${trfs_ver}"
 
@@ -14,7 +14,7 @@ fi
 echo "Using ComfyUI version ${comfyui_ver}"
 
 if [ "$comfyui_mgr_ver" == "" ]; then
-    comfyui_mgr_ver=3.31.6
+    comfyui_mgr_ver=3.31.8
 fi
 echo "Using ComfyUI Manager version ${comfyui_mgr_ver}"
 
