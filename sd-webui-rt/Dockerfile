@@ -1,7 +1,7 @@
 ARG BASE_IMAGE=jianshao/pt-rt-base
 ARG TAG=2.1.2-cu121
 
-FROM jianshao/py-builder:3.12 as build
+FROM jianshao/py-builder:3.11 as build
 RUN pip wheel --no-deps insightface
 
 FROM ${BASE_IMAGE}:${TAG}
