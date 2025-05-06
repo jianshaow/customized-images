@@ -1,7 +1,7 @@
 #!/bin/bash
 
 if [ "$pt_ver" == "" ]; then
-    pt_ver=2.5.1
+    pt_ver=2.4.1
 fi
 echo "Using pttorch version: ${pt_ver}"
 

@@ -3,7 +3,7 @@ ARG TAG=3.12-slim
 
 FROM ${BASE_IMAGE}:${TAG}
 
-ARG PT_VER=2.5.1
+ARG PT_VER=2.4.1
 ARG CUDA_TAG=cu124
 RUN pip install --no-cache-dir --upgrade pip && \
     pip install --no-cache-dir torch==${PT_VER} torchvision torchaudio \
