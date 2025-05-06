@@ -9,7 +9,7 @@ base_image=jianshao/python-base
 docker pull ${base_image}:${python_ver}-slim
 
 if [ "$pt_ver" == "" ]; then
-    pt_ver=2.4.1
+    pt_ver=2.5.1
 fi
 echo "Using pytorch version: ${pt_ver}"
 
