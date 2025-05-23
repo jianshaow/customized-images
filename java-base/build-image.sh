@@ -6,7 +6,7 @@ fi
 echo "Using java version: ${java_ver}"
 
 base_image=ubuntu
-tag=24.02
+tag=24.04
 docker pull ${base_image}:${tag}
 
 image=jianshao/java-base
