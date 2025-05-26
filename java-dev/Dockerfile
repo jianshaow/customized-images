@@ -8,7 +8,6 @@ RUN curl -fsSL https://pkg.cloudflare.com/cloudflare-main.gpg > /usr/share/keyri
     echo 'deb [signed-by=/usr/share/keyrings/cloudflare-main.gpg] https://pkg.cloudflare.com/cloudflared any main' > /etc/apt/sources.list.d/cloudflared.list
 
 RUN --mount=type=bind,source=packages.txt,target=packages.txt \
-    /apt-install.sh packages.txt && \
-    useradd -ms /bin/bash devel
+    /apt-install.sh packages.txt
 
 USER devel
