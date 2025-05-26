@@ -10,7 +10,7 @@ tag=24.04
 docker pull ${base_image}:${tag}
 
 image=jianshao/java-base
-docker build -t ${image}:${java_ver} . --build-arg TAG=${tag}
+docker build -t ${image}:${java_ver} . --build-arg TAG=${tag} $*
 docker push ${image}:${java_ver}
 
 echo "Done"
