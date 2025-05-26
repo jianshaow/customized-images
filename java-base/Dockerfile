@@ -7,10 +7,9 @@ ARG JAVA_VER=21
 
 COPY apt-install.sh /
 RUN --mount=type=bind,source=packages.txt,target=packages.txt \
-    /apt-install.sh packages.txt openjdk-${JAVA_VER}-jdk && \
-    useradd -ms /bin/bash devel
+    /apt-install.sh packages.txt openjdk-${JAVA_VER}-jdk
 
-USER devel
-ENV HOME=/home/devel
+USER ubuntu
+ENV HOME=/home/ubuntu
 
 WORKDIR $HOME
