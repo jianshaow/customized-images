@@ -6,3 +6,4 @@ git
 gradle
 maven
 libgbm-dev
+cloudflared
