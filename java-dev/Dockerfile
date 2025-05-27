@@ -9,4 +9,4 @@ RUN --mount=type=bind,source=packages.txt,target=packages.txt \
     echo 'deb [signed-by=/usr/share/keyrings/cloudflare-main.gpg] https://pkg.cloudflare.com/cloudflared any main' > /etc/apt/sources.list.d/cloudflared.list && \
     /apt-install.sh packages.txt
 
-USER ubuntu
+USER devel
