@@ -6,7 +6,7 @@ fi
 echo "Using java version: ${java_ver}"
 
 if [ "$ubuntu_ver" == "" ]; then
-    ubuntu_ver=22.04
+    ubuntu_ver=24.04
 fi
 echo "Using Ubuntu version: ${ubuntu_ver}"
 
