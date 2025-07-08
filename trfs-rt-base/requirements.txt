@@ -1,5 +1,3 @@
 einops
 bitsandbytes
-accelerate
-sentencepiece
-transformers
+transformers[torch, sentencepiece]
