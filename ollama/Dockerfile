@@ -1,12 +1,9 @@
 ARG BASE_IMAGE=ollama/ollama
-ARG TAG=0.4.3
+ARG TAG=0.9.6
 
 FROM ${BASE_IMAGE}:${TAG}
 
-RUN useradd -ms /bin/bash devel
-
-USER devel
-ENV HOME=/home/devel
-ENV PATH=$HOME/.local/bin:$PATH
+USER ubuntu
+ENV HOME=/home/ubuntu
 
 WORKDIR $HOME
