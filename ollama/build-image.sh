@@ -1,7 +1,7 @@
 #!/bin/bash
 
 if [ "$ollama_ver" == "" ]; then
-    ollama_ver=0.9.6
+    ollama_ver=0.10.1
 fi
 echo "Using ollama version: ${ollama_ver}"
 
