@@ -9,12 +9,12 @@ base_image=jianshao/python-base
 docker pull ${base_image}:${python_ver}-slim
 
 if [ "$pt_ver" == "" ]; then
-    pt_ver=2.7.1
+    pt_ver=2.4.1
 fi
 echo "Using pytorch version: ${pt_ver}"
 
 if [ "$cuda_tag" == "" ]; then
-    cuda_tag=cu126
+    cuda_tag=cu124
 fi
 echo "Using cuda tag: ${cuda_tag}"
 
