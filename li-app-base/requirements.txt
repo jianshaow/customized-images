@@ -9,5 +9,4 @@ llama-index-embeddings-ollama
 llama-index-llms-openai
 llama-index-llms-google-genai
 llama-index-llms-ollama
-llama-index-agent-openai
 llama-index-tools-mcp
