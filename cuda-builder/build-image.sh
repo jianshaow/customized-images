@@ -12,7 +12,7 @@ if [ "$keyring_deb_url" == "" ]; then
 fi
 
 if [ "$cuda_ver" == "" ]; then
-    cuda_ver=12-4
+    cuda_ver=12-6
 fi
 echo "Using cuda version: ${cuda_ver}"
 
