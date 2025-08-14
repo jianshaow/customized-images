@@ -3,4 +3,5 @@ matplotlib
 pydot_ng
 imageio
 fastapi
+uvicorn
 aiostream
