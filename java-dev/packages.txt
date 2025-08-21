@@ -6,4 +6,5 @@ git
 gradle
 maven
 libgbm-dev
+graphviz
 cloudflared
