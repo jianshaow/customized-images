@@ -1,5 +1,5 @@
 ARG BASE_IMAGE=jianshao/trfs-rt-base
-ARG TAG=4.51.3
+ARG TAG=4.54.1
 
 FROM jianshao/py-builder:3.12 AS build
 RUN pip wheel --no-deps insightface
@@ -14,7 +14,7 @@ USER devel
 ARG COMFYUI_VER=v0.3.40
 ARG COMFYUI_MGR_VER=3.32.5
 ADD --chown=devel:devel https://raw.githubusercontent.com/comfyanonymous/ComfyUI/${COMFYUI_VER}/requirements.txt /tmp/comfyui_requirements.txt
-ADD --chown=devel:devel https://raw.githubusercontent.com/ltdrdata/ComfyUI-Manager/${COMFYUI_MGR_VER}/requirements.txt /tmp/comfyui_mgr_requirements.txt
+ADD --chown=devel:devel https://raw.githubusercontent.com/Comfy-Org/ComfyUI-Manager/${COMFYUI_MGR_VER}/requirements.txt /tmp/comfyui_mgr_requirements.txt
 COPY --from=build $HOME/*.whl /tmp/
 
 RUN --mount=type=bind,source=requirements.txt,target=requirements.txt \
