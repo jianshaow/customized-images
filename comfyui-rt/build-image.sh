@@ -9,12 +9,12 @@ base_image=jianshao/trfs-rt-base
 docker pull ${base_image}:${trfs_ver}
 
 if [ "$comfyui_ver" == "" ]; then
-    comfyui_ver=v0.3.40
+    comfyui_ver=v0.3.52
 fi
 echo "Using ComfyUI version ${comfyui_ver}"
 
 if [ "$comfyui_mgr_ver" == "" ]; then
-    comfyui_mgr_ver=3.32.5
+    comfyui_mgr_ver=3.35
 fi
 echo "Using ComfyUI Manager version ${comfyui_mgr_ver}"
 
