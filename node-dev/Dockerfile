@@ -10,7 +10,7 @@ RUN --mount=type=bind,source=packages.txt,target=packages.txt \
     npm install -g pnpm serve
 
 USER node
-ENV HOME /home/node
+ENV HOME=/home/node
 WORKDIR $HOME
 
 EXPOSE 3000
