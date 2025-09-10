@@ -1,5 +1,5 @@
 ARG BASE_IMAGE=ollama/ollama
-ARG TAG=0.10.1
+ARG TAG=latest
 
 FROM ${BASE_IMAGE}:${TAG}
 

@@ -4,7 +4,6 @@
 
 ### Build
 ~~~ shell
-export ollama_ver=0.10.1
 ./build-image.sh
 ~~~
 ### Test
@@ -13,7 +12,7 @@ export nextchat_ver=2.16.1
 # run a ollama server
 docker run --name ollama-server -it --rm -p 11434:11434 \
            -v $HOME/.ollama:/home/ubuntu/.ollama \
-           jianshao/ollama-server:$ollama_ver
+           jianshao/ollama-server:latest
 
 # run a codellama with cli
 docker exec -it ollama-server ollama run codellama
