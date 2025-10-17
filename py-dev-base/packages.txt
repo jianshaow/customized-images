@@ -3,5 +3,6 @@ openssh-client
 netcat-openbsd
 curl
 git
+jq
 python3-tk
 graphviz
