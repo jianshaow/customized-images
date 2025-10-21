@@ -6,7 +6,7 @@ fi
 echo "Using python version: ${python_ver}"
 
 base_image=jianshao/python-base
-docker pull ${base_image}:${python_ver}-slim
+docker pull ${base_image}:${python_ver}
 
 if [ "$pt_ver" == "" ]; then
     pt_ver=2.4.1
@@ -20,7 +20,7 @@ echo "Using cuda tag: ${cuda_tag}"
 
 image=jianshao/pt-rt-base
 tag=${pt_ver}-${cuda_tag}
-docker build -t ${image}:${tag} . --build-arg TAG=${python_ver}-slim \
+docker build -t ${image}:${tag} . --build-arg TAG=${python_ver} \
        --build-arg PT_VER=${pt_ver} --build-arg CUDA_TAG=${cuda_tag} $*
 docker push ${image}:${tag}
 

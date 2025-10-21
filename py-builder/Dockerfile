@@ -1,5 +1,5 @@
 ARG BASE_IMAGE=python
-ARG TAG=3.12-slim
+ARG TAG=3.12
 
 FROM ${BASE_IMAGE}:${TAG}
 

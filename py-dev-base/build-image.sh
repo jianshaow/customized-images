@@ -6,10 +6,10 @@ fi
 echo "Using python version: ${python_ver}"
 
 base_image=jianshao/python-base
-docker pull ${base_image}:${python_ver}-slim
+docker pull ${base_image}:${python_ver}
 
 image=jianshao/py-dev-base
-docker build -t ${image}:$python_ver . --build-arg TAG=${python_ver}-slim $*
+docker build -t ${image}:$python_ver . --build-arg TAG=${python_ver} $*
 docker push ${image}:$python_ver
 
 echo "Done"

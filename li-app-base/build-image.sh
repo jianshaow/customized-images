@@ -6,10 +6,10 @@ fi
 echo "Using python version: ${python_ver}"
 
 base_image=jianshao/python-base
-docker pull ${base_image}:${python_ver}-slim
+docker pull ${base_image}:${python_ver}
 
 image=jianshao/li-app-base
-docker build -t ${image}:latest . --build-arg TAG=${python_ver}-slim $*
+docker build -t ${image}:latest . --build-arg TAG=${python_ver} $*
 
 li_ver=$(docker run --rm ${image}:latest pip list | grep llama-index-core | awk '{print $2}')
 echo "Using llama-index version ${li_ver}"
