@@ -1,7 +1,7 @@
 #!/bin/bash
 
 if [ "$trfs_ver" == "" ]; then
-    trfs_ver=4.54.1
+    trfs_ver=latest
 fi
 echo "Using transformers version ${trfs_ver}"
 
