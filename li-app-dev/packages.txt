@@ -3,3 +3,5 @@ openssh-client
 netcat-openbsd
 curl
 git
+jq
+yq

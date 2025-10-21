@@ -3,6 +3,8 @@ openssh-client
 netcat
 curl
 git
+jq
+yq
 g++
 gdb
 make

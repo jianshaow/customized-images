@@ -3,6 +3,8 @@ openssh-client
 netcat-openbsd
 curl
 git
+jq
+yq
 gradle
 maven
 libgbm-dev

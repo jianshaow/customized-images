@@ -4,3 +4,5 @@ netcat-openbsd
 iproute2
 curl
 git
+jq
+yq
