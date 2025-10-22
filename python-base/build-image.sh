@@ -10,7 +10,7 @@ if [ -z "$ubuntu_ver" ]; then
 fi
 echo "Using ubuntu version: ${ubuntu_ver}"
 
-docker pull ubuntu:24.04
+docker pull ubuntu:${ubuntu_ver}
 
 docker build -t jianshao/python-base:${python_ver} . --build-arg TAG=${ubuntu_ver} --build-arg PY_VER=${python_ver} $*
 docker push jianshao/python-base:${python_ver}
