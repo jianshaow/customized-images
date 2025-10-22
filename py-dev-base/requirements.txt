@@ -1,3 +1,4 @@
+uv
 poetry
 matplotlib
 pydot_ng

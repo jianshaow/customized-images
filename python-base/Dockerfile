@@ -1,12 +1,10 @@
-ARG BASE_IMAGE=ubuntu
-ARG TAG=24.04
-ARG PY_VER=3.12
+ARG BASE_IMAGE=python
+ARG TAG=3.12-slim
 
 FROM ${BASE_IMAGE}:${TAG}
 
 COPY apt-install.sh /
-RUN /apt-install.sh python${PY_VER} && \
-    useradd -ms /bin/bash devel
+RUN useradd -ms /bin/bash devel
 
 USER devel
 ENV HOME=/home/devel
