@@ -4,6 +4,5 @@ netcat-openbsd
 curl
 git
 jq
-yq
 tk
 graphviz

@@ -4,4 +4,3 @@ netcat-openbsd
 curl
 git
 jq
-yq
