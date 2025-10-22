@@ -5,5 +5,4 @@ curl
 git
 jq
 yq
-python3-tk
 graphviz
