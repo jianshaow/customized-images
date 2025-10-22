@@ -6,7 +6,7 @@ fi
 echo "Using python version: ${python_ver}"
 
 if [ -z "$ubuntu_ver" ]; then
-    ubuntu_ver=3.12
+    ubuntu_ver=24.04
 fi
 echo "Using ubuntu version: ${ubuntu_ver}"
 
