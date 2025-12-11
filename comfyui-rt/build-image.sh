@@ -14,7 +14,7 @@ fi
 echo "Using ComfyUI version ${comfyui_ver}"
 
 if [ "$comfyui_mgr_ver" == "" ]; then
-    comfyui_mgr_ver=$(curl -s https://api.github.com/repos/Comfy-Org/ComfyUI-Manager/releases/latest | grep tag_name | cut -d '"' -f4)
+    comfyui_mgr_ver=$(curl -s "https://api.github.com/repos/Comfy-Org/ComfyUI-Manager/tags" | grep '"name":' | head -n 1 | cut -d '"' -f4)
 fi
 echo "Using ComfyUI Manager version ${comfyui_mgr_ver}"
 
