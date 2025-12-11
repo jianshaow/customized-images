@@ -9,20 +9,22 @@ base_image=jianshao/trfs-rt-base
 docker pull ${base_image}:${trfs_ver}
 
 if [ "$comfyui_ver" == "" ]; then
-    comfyui_ver=v0.3.52
+    comfyui_ver=$(curl -s https://api.github.com/repos/comfyanonymous/ComfyUI/releases/latest | grep tag_name | cut -d '"' -f4)
 fi
 echo "Using ComfyUI version ${comfyui_ver}"
 
 if [ "$comfyui_mgr_ver" == "" ]; then
-    comfyui_mgr_ver=3.35
+    comfyui_mgr_ver=$(curl -s https://api.github.com/repos/Comfy-Org/ComfyUI-Manager/releases/latest | grep tag_name | cut -d '"' -f4)
 fi
 echo "Using ComfyUI Manager version ${comfyui_mgr_ver}"
 
 image=jianshao/comfyui-rt
-docker build -t ${image}:${comfyui_ver} . --build-arg TAG=${trfs_ver} \
+docker build -t ${image}:latest . --build-arg TAG=${trfs_ver} \
        --build-arg COMFYUI_VER=${comfyui_ver} \
        --build-arg COMFYUI_MGR_VER=${comfyui_mgr_ver} $*
 
+docker tag ${image}:latest ${image}:${comfyui_ver}
+docker push ${image}:latest
 docker push ${image}:${comfyui_ver}
 
 echo "Done"
