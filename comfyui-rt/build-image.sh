@@ -13,11 +13,6 @@ if [ "$comfyui_ver" == "" ]; then
 fi
 echo "Using ComfyUI version ${comfyui_ver}"
 
-if [ "$comfyui_mgr_ver" == "" ]; then
-    comfyui_mgr_ver=$(curl -s "https://api.github.com/repos/Comfy-Org/ComfyUI-Manager/tags" | grep '"name":' | head -n 1 | cut -d '"' -f4)
-fi
-echo "Using ComfyUI Manager version ${comfyui_mgr_ver}"
-
 image=jianshao/comfyui-rt
 docker build -t ${image}:latest . --build-arg TAG=${trfs_ver} \
        --build-arg COMFYUI_VER=${comfyui_ver} \
