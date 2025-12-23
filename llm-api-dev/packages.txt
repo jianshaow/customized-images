@@ -1,6 +1,0 @@
-iproute2
-openssh-client
-netcat-openbsd
-curl
-git
-jq
