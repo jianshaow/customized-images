@@ -1,0 +1,5 @@
+fcitx
+fcitx-pinyin
+fonts-noto-cjk
+dbus-x11
+libxtst6
