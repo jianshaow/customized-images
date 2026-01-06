@@ -1,5 +1,5 @@
 ARG BASE_IMAGE=jianshao/pt-rt-base
-ARG TAG=2.4.1-cu124
+ARG TAG=2.9.1-cu130
 
 FROM ${BASE_IMAGE}:${TAG}
 
