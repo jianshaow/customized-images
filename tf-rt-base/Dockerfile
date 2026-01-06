@@ -3,7 +3,7 @@ ARG TAG=3.12
 
 FROM ${BASE_IMAGE}:${TAG}
 
-ARG TF_VER=2.19.0
+ARG TF_VER=2.20.0
 RUN pip install --no-cache-dir --upgrade pip && \
     pip install --no-cache-dir tensorflow[and-cuda]==${TF_VER}
 

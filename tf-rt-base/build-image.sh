@@ -9,7 +9,7 @@ base_image=jianshao/python-base
 docker pull ${base_image}:${python_ver}
 
 if [ "$tf_ver" == "" ]; then
-    tf_ver=2.19.0
+    tf_ver=2.20.0
 fi
 echo "Using tensorflow version: ${tf_ver}"
 
