@@ -9,7 +9,7 @@ base_image=jianshao/trfs-rt-base
 docker pull ${base_image}:${trfs_ver}
 
 if [ "$comfyui_ver" == "" ]; then
-    comfyui_ver=$(curl -s https://api.github.com/repos/comfyanonymous/ComfyUI/releases/latest | grep tag_name | cut -d '"' -f4)
+    comfyui_ver=$(curl -sL https://api.github.com/repos/comfyanonymous/ComfyUI/releases/latest | grep tag_name | cut -d '"' -f4)
 fi
 echo "Using ComfyUI version ${comfyui_ver}"
 
