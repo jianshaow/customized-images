@@ -1,4 +1,4 @@
-# dl-dev-base
+# py-dev-base
 
 ~~~ shell
 # export python_ver=3.11
