@@ -4,6 +4,7 @@ ARG TAG=24.04
 FROM ${BASE_IMAGE}:${TAG}
 
 USER root
+COPY apt-install.sh /
 RUN --mount=type=bind,source=packages.txt,target=packages.txt \
     /apt-install.sh packages.txt
 
