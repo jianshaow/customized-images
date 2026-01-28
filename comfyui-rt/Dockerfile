@@ -24,4 +24,4 @@ RUN --mount=type=bind,source=requirements.txt,target=requirements.txt \
     pip install --no-cache-dir /tmp/*.whl && \
     rm -f /tmp/*
 
-WORKDIR $HOME/comfyanonymous/ComfyUI
+WORKDIR $HOME/ComfyUI
