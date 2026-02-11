@@ -1,6 +1,7 @@
 ca-certificates
 openssh-client
 netcat-openbsd
+apache2-utils
 iproute2
 curl
 git

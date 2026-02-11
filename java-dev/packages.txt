@@ -1,6 +1,7 @@
 iproute2
 openssh-client
 netcat-openbsd
+apache2-utils
 curl
 git
 jq
