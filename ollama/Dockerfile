@@ -5,5 +5,6 @@ FROM ${BASE_IMAGE}:${TAG}
 
 USER ubuntu
 ENV HOME=/home/ubuntu
+ENV PATH="${HOME}/.local/bin:${PATH}"
 
 WORKDIR $HOME
