@@ -9,7 +9,7 @@ base_image=jianshao/py-dev-base
 docker pull ${base_image}:${python_ver}
 
 image=jianshao/sandbox-base
-docker build -t ${image}:${tag} . --build-arg TAG=latest $*
+docker build -t ${image}:latest . --build-arg TAG=latest $*
 docker push ${image}:latest
 
 echo "Done"
