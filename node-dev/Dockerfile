@@ -3,7 +3,7 @@ ARG TAG=lts-slim
 
 FROM ${BASE_IMAGE}:${TAG}
 
-COPY apt-install.sh /
+COPY apt-install.sh /usr/local/bin/
 RUN --mount=type=bind,source=packages.txt,target=packages.txt \
     apt-install.sh packages.txt && \
     npm update -g npm yarn && \

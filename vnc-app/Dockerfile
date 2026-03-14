@@ -4,7 +4,7 @@ ARG TAG=24.04
 FROM ${BASE_IMAGE}:${TAG}
 
 USER root
-COPY apt-install.sh /
+COPY apt-install.sh /usr/local/bin/
 RUN --mount=type=bind,source=packages.txt,target=packages.txt \
     apt-install.sh packages.txt upgrade
 
