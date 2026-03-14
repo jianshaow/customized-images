@@ -12,6 +12,5 @@ RUN --mount=type=bind,source=requirements.txt,target=requirements.txt \
     pip install --no-cache-dir --upgrade pip setuptools wheel && \
     pip install --no-cache-dir -r requirements.txt
 
-COPY docker-entrypoint.sh ${HOME}/bin/
-
-ENTRYPOINT [ "${HOME}/bin/docker-entrypoint.sh" ]
+COPY docker-entrypoint.sh /usr/local/bin/
+ENTRYPOINT [ "docker-entrypoint.sh" ]
