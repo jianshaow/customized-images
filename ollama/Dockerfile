@@ -3,8 +3,11 @@ ARG TAG=latest
 
 FROM ${BASE_IMAGE}:${TAG}
 
+COPY docker-entrypoint.sh /usr/local/bin/
+ENTRYPOINT [ "docker-entrypoint.sh" ]
+CMD [ "/bin/ollama", "serve" ]
+
 USER ubuntu
 ENV HOME=/home/ubuntu
-ENV PATH="${HOME}/.local/bin:${PATH}"
 
 WORKDIR $HOME
