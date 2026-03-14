@@ -15,5 +15,3 @@ RUN --mount=type=bind,source=requirements.txt,target=requirements.txt \
 COPY docker-entrypoint.sh ${HOME}/bin/
 
 ENTRYPOINT [ "${HOME}/bin/docker-entrypoint.sh" ]
-
-ENV PATH=${HOME}/bin:${HOME}/.local/bin:${PATH}
