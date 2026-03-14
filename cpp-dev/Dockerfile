@@ -3,9 +3,9 @@ ARG TAG=22.04
 
 FROM ${BASE_IMAGE}:${TAG}
 
-COPY apt-install.sh /
+COPY apt-install.sh /usr/local/bin/
 RUN --mount=type=bind,source=packages.txt,target=packages.txt \
-    /apt-install.sh packages.txt && \
+    apt-install.sh packages.txt && \
     useradd -ms /bin/bash devel
 
 USER devel

@@ -8,7 +8,7 @@ FROM ${BASE_IMAGE}:${TAG}
 
 USER root
 RUN --mount=type=bind,source=packages.txt,target=packages.txt \
-    /apt-install.sh packages.txt
+    apt-install.sh packages.txt
 
 USER devel
 ARG COMFYUI_VER=v0.3.40

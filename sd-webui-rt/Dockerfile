@@ -8,7 +8,7 @@ FROM ${BASE_IMAGE}:${TAG}
 
 USER root
 RUN --mount=type=bind,source=packages.txt,target=packages.txt \
-    /apt-install.sh packages.txt
+    apt-install.sh packages.txt
 
 USER devel
 ARG SD_WEBUI_VER=v1.10.1

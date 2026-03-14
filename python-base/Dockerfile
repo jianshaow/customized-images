@@ -4,12 +4,9 @@ ARG TAG=3.12-slim
 FROM ${BASE_IMAGE}:${TAG}
 
 ARG USER=devel
-ARG DOCKER_GID=117
-RUN useradd -ms /bin/bash ${USER} && \
-    groupadd -g ${DOCKER_GID} docker && \
-    usermod -aG docker ${USER}
+RUN useradd -ms /bin/bash ${USER}
 
-COPY apt-install.sh /
+COPY apt-install.sh /usr/local/bin/
 
 USER ${USER}
 ENV HOME=/home/${USER}
