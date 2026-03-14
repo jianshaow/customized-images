@@ -12,8 +12,4 @@ if [ -n "$EXTRA_PATH" ]; then
     export PATH=$EXTRA_PATH:$PATH
 fi
 
-if [ $# -eq 0 ]; then
-    set -- /bin/bash
-fi
-
 exec "$@"

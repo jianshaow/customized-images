@@ -14,3 +14,4 @@ RUN --mount=type=bind,source=requirements.txt,target=requirements.txt \
 
 COPY docker-entrypoint.sh /usr/local/bin/
 ENTRYPOINT [ "docker-entrypoint.sh" ]
+CMD [ "/bin/bash" ]
