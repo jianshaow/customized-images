@@ -1,3 +1,4 @@
+lsof
 procps
 dnsutils
 iputils-ping
