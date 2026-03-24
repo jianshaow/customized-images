@@ -6,7 +6,7 @@ FROM ${BASE_IMAGE}:${TAG}
 USER root
 RUN --mount=type=bind,source=packages.txt,target=packages.txt \
     apt-install.sh packages.txt && \
-    ln -s /home/devel /home/ubuntu
+    mkdir /home/ubuntu && chown -R devel:devel /home/ubuntu
 
 USER devel
 RUN --mount=type=bind,source=requirements.txt,target=requirements.txt \
