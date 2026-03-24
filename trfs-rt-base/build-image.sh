@@ -1,11 +1,11 @@
 #!/bin/bash
 
-if [ "$pt_ver" == "" ]; then
-    pt_ver=2.9.1
+if [ -z "$pt_ver" ]; then
+    pt_ver=2.11.0
 fi
 echo "Using pytorch version: ${pt_ver}"
 
-if [ "$cuda_tag" == "" ]; then
+if [ -z "$cuda_tag" ]; then
     cuda_tag=cu130
 fi
 echo "Using cuda tag: ${cuda_tag}"
