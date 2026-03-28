@@ -3,7 +3,10 @@ ARG TAG=latest
 
 FROM ${BASE_IMAGE}:${TAG}
 
-COPY docker-entrypoint.sh /usr/local/bin/
+COPY apt-install.sh docker-entrypoint.sh /usr/local/bin/
+RUN --mount=type=bind,source=packages.txt,target=packages.txt \
+    apt-install.sh packages.txt
+
 ENTRYPOINT [ "docker-entrypoint.sh" ]
 CMD [ "/bin/ollama", "serve" ]
 
