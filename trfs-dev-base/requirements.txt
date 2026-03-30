@@ -1,3 +1,5 @@
 matplotlib
 pydot_ng
 imageio
+protobuf
+qwen-vl-utils[decord]
