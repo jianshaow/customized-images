@@ -1,6 +1,6 @@
 langchain
 langchainhub
-langchain-core>=0.3,<0.4
+langchain-core
 langchain-cli
 langchain-chroma
 langchain-community
