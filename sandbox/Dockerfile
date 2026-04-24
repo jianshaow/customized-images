@@ -15,7 +15,7 @@ RUN --mount=type=bind,source=requirements.txt,target=requirements.txt \
 pip install --no-cache-dir --upgrade pip setuptools wheel && \
 pip install --no-cache-dir -r requirements.txt
 
-COPY --from=ollama /usr/bin/ollama /usr/local/bin/
 COPY docker-entrypoint.sh /usr/local/bin/
+COPY --from=ollama /usr/bin/ollama /usr/local/bin/
 ENTRYPOINT [ "docker-entrypoint.sh" ]
 CMD [ "/bin/bash" ]
