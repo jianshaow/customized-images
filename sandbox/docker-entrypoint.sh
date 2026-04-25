@@ -2,6 +2,10 @@
 
 set -e
 
+if [ -f "$HOME/.profile" ] ; then
+    . "$HOME/.profile"
+fi
+
 if [ -d "$HOME/.nvm" ]; then
     export NVM_DIR="$HOME/.nvm"
     [ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"
