@@ -7,6 +7,7 @@ FROM ${OLLAMA_IMAGE}:${OLLAMA_TAG} as ollama
 
 FROM ${BASE_IMAGE}:${TAG}
 
+COPY docker-entrypoint.sh /usr/local/bin/
 COPY --from=ollama /usr/bin/ollama /usr/bin/
 COPY --from=ollama /usr/lib/ollama/*.so /usr/lib/ollama/
 COPY --from=ollama /usr/lib/ollama/cuda_v13 /usr/lib/ollama/cuda_v13
