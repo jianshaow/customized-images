@@ -1,5 +1,5 @@
-xz
 lsof
 procps
+xz-utils
 dnsutils
 iputils-ping
