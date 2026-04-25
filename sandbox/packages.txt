@@ -1,5 +1,7 @@
 lsof
 procps
+ffmpeg
+ripgrep
 xz-utils
 dnsutils
 iputils-ping
