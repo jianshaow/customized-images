@@ -1,3 +1,4 @@
+xz
 lsof
 procps
 dnsutils
