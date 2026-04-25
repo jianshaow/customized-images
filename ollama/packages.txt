@@ -1,5 +1,8 @@
+ca-certificates
 python-is-python3
 python3-venv
+libopenblas0
+libvulkan1
 bubblewrap
 curl
 git
