@@ -1,4 +1,4 @@
-# pt-rt-base
+# sandbox
 
 ~~~ shell
 ./build-image.sh

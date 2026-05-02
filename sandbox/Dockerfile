@@ -1,8 +1,6 @@
 ARG BASE_IMAGE=jianshao/py-dev-base
 ARG TAG=3.12
 
-FROM jianshao/ollama:latest AS ollama
-
 FROM ${BASE_IMAGE}:${TAG}
 
 USER root
@@ -16,6 +14,5 @@ pip install --no-cache-dir --upgrade pip setuptools wheel && \
 pip install --no-cache-dir -r requirements.txt
 
 COPY docker-entrypoint.sh /usr/local/bin/
-COPY --from=ollama /usr/bin/ollama /usr/local/bin/
 ENTRYPOINT [ "docker-entrypoint.sh" ]
 CMD [ "/bin/bash" ]
