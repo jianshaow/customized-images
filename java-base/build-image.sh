@@ -14,7 +14,7 @@ base_image=ubuntu
 docker pull ${base_image}:${ubuntu_ver}
 
 image=jianshao/java-base
-docker build -t ${image}:${java_ver} . --build-arg TAG=${ubuntu_ver} $*
+docker build -t ${image}:${java_ver} . --build-arg TAG=${ubuntu_ver} --build-arg JAVA_VER=${java_ver} $*
 docker push ${image}:${java_ver}
 
 echo "Done"
