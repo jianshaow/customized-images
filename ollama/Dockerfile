@@ -4,7 +4,7 @@ ARG OLLAMA_IMAGE=ollama/ollama
 ARG OLLAMA_TAG=latest
 
 FROM ${OLLAMA_IMAGE}:${OLLAMA_TAG} AS ollama
-RUN mkdir /tmp/libs && cp -a /usr/lib/ollama/*.so* /tmp/libs/
+RUN mkdir /tmp/libs && cp -a /usr/lib/ollama/*.so* /usr/lib/ollama/llama-* /tmp/libs/
 
 FROM ${BASE_IMAGE}:${TAG}
 
