@@ -1,4 +1,4 @@
-matrix-nio
-matplotlib
-socksio
 PySocks
+socksio
+matplotlib
+onnxruntime-gpu

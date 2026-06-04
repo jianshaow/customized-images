@@ -18,11 +18,10 @@ COPY --from=build $HOME/*.whl /tmp/
 
 RUN --mount=type=bind,source=requirements.txt,target=requirements.txt \
     pip install --no-cache-dir --upgrade pip && \
+    pip install --no-cache-dir /tmp/*.whl && \
     pip install --no-cache-dir -r /tmp/requirements.txt && \
     pip install --no-cache-dir -r /tmp/manager_requirements.txt && \
     pip install --no-cache-dir -r requirements.txt && \
-    pip install --no-cache-dir --extra-index-url https://visualstudio.com onnxruntime-gpu  && \
-    pip install --no-cache-dir /tmp/*.whl && \
     rm -f /tmp/*
 
 WORKDIR $HOME/ComfyUI
