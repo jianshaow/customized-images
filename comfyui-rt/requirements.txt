@@ -1,4 +1,3 @@
-onnxruntime-gpu
 matrix-nio
 matplotlib
 socksio
