@@ -1,4 +1,5 @@
 PySocks
 socksio
+matrix-nio
 matplotlib
 onnxruntime-gpu
