@@ -3,6 +3,7 @@ ARG TAG=lts
 
 FROM ${BASE_IMAGE}:${TAG}
 
+USER root
 RUN useradd -ms /bin/bash -N -G users -u 1034 devel
 
 USER devel
