@@ -13,7 +13,7 @@ docker build -t ${image}:${node_ver} . --build-arg TAG=${node_ver}-slim $*
 docker push ${image}:${node_ver}
 
 nas_image=jianshao/node-nas
-docker build -t ${nas_image}:${node_ver} . --build-arg TAG=${node_ver}-slim -f Dockerfile.nas $*
+docker build -t ${nas_image}:${node_ver} . --build-arg TAG=${node_ver} -f Dockerfile.nas $*
 docker push ${nas_image}:${node_ver}
 
 echo "Done"
