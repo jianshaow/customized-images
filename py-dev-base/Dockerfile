@@ -5,7 +5,11 @@ FROM ${BASE_IMAGE}:${TAG}
 
 USER root
 RUN --mount=type=bind,source=packages.txt,target=packages.txt \
-    apt-install.sh packages.txt
+apt-install.sh packages.txt
+
+COPY docker-entrypoint.sh /usr/local/bin/
+ENTRYPOINT [ "docker-entrypoint.sh" ]
+CMD [ "/bin/bash" ]
 
 USER devel
 RUN --mount=type=bind,source=requirements.txt,target=requirements.txt \
