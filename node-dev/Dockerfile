@@ -6,7 +6,7 @@ FROM ${BASE_IMAGE}:${TAG}
 COPY apt-install.sh docker-entrypoint.sh /usr/local/bin/
 RUN --mount=type=bind,source=packages.txt,target=packages.txt \
     apt-install.sh packages.txt && ln -s /home/node /home/devel && \
-    npm update -g npm yarn && npm install -g pnpm serve
+    npm update -g npm yarn pnpm serve
 
 ENTRYPOINT [ "docker-entrypoint.sh" ]
 CMD [ "/bin/bash" ]
