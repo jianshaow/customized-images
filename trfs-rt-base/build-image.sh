@@ -1,7 +1,7 @@
 #!/bin/bash
 
 if [ -z "$pt_ver" ]; then
-    pt_ver=2.11.0
+    pt_ver=2.12.1
 fi
 echo "Using pytorch version: ${pt_ver}"
 

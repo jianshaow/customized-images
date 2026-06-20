@@ -1,5 +1,5 @@
 ARG BASE_IMAGE=jianshao/pt-rt-base
-ARG BASE_VER=2.9.1-cu130
+ARG BASE_VER=2.12.1-cu130
 
 FROM ${BASE_IMAGE}:${BASE_VER}
 
