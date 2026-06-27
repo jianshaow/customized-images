@@ -5,4 +5,6 @@ libopenblas0
 libvulkan1
 bubblewrap
 curl
+wget
+zstd
 git
