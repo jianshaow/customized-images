@@ -1,3 +1,4 @@
+unstructured
 langchain[ollama,openai,google-genai,deepseek]
 langchain-chroma
 langchain-unstructured
