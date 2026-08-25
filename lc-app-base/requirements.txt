@@ -1,5 +1,6 @@
 unstructured
 langchain[ollama,openai,google-genai,deepseek]
 langchain-chroma
+langchain-text-splitters
 langchain-unstructured
 langchain-mcp-adapters
