@@ -1,11 +1,4 @@
-unstructured
-langchain
-langchainhub
-langchain-core
-langchain-cli
+langchain[ollama,openai,google-genai,deepseek]
 langchain-chroma
-langchain-community
-langchain-ollama
-langchain-openai
-langchain-google-genai
+langchain-unstructured
 langchain-mcp-adapters
