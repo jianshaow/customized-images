@@ -4,3 +4,4 @@ langchain-chroma
 langchain-text-splitters
 langchain-unstructured
 langchain-mcp-adapters
+deepagents
