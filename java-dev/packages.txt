@@ -1,3 +1,5 @@
+libgbm-dev
+libatk-bridge2.0-0t64
 iproute2
 openssh-client
 netcat-openbsd
@@ -7,5 +9,4 @@ git
 jq
 gradle
 maven
-libgbm-dev
 graphviz
