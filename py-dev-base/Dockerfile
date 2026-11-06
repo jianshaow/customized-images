@@ -11,6 +11,7 @@ COPY docker-entrypoint.sh /usr/local/bin/
 ENTRYPOINT [ "docker-entrypoint.sh" ]
 CMD [ "/bin/bash" ]
 
+ARG USER
 USER ${USER}
 RUN --mount=type=bind,source=requirements.txt,target=requirements.txt \
     pip install --no-cache-dir --upgrade pip setuptools wheel && \
