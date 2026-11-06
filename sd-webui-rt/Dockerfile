@@ -10,6 +10,7 @@ USER root
 RUN --mount=type=bind,source=packages.txt,target=packages.txt \
     apt-install.sh packages.txt
 
+ARG USER
 USER ${USER}
 ARG SD_WEBUI_VER=v1.10.1
 ADD --chown=${USER}:${USER} https://github.com/AUTOMATIC1111/stable-diffusion-webui/raw/${SD_WEBUI_VER}/requirements_versions.txt /tmp/requirements.txt

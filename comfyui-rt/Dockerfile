@@ -10,6 +10,7 @@ USER root
 RUN --mount=type=bind,source=packages.txt,target=packages.txt \
     apt-install.sh packages.txt
 
+ARG USER
 USER ${USER}
 ARG COMFYUI_VER=v0.3.40
 ADD --chown=${USER}:${USER} https://raw.githubusercontent.com/comfyanonymous/ComfyUI/${COMFYUI_VER}/requirements.txt /tmp/requirements.txt
