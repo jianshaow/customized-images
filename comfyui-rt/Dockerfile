@@ -1,7 +1,7 @@
 ARG BASE_IMAGE=jianshao/trfs-rt-base
 ARG TAG=latest
 
-FROM jianshao/py-builder:3.12 AS build
+FROM jianshao/py-builder:3.14 AS build
 RUN pip wheel --no-deps insightface
 
 FROM ${BASE_IMAGE}:${TAG}
