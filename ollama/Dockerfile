@@ -1,8 +1,9 @@
-ARG BASE_IMAGE=ubuntu
-ARG TAG=24.04
+ARG BASE_IMAGE=jianshao/py-dev-base
+ARG TAG=3.14
 
 FROM ${BASE_IMAGE}:${TAG}
 
+USER root
 ARG OLLAMA_VER=v0.30.11
 RUN --mount=type=bind,source=apt-install.sh,target=/usr/local/bin/apt-install.sh \
 --mount=type=bind,source=packages.txt,target=packages.txt \
@@ -19,7 +20,4 @@ ENV OLLAMA_HOST=0.0.0.0:11434
 ENTRYPOINT [ "docker-entrypoint.sh" ]
 CMD [ "/bin/ollama", "serve" ]
 
-USER ubuntu
-ENV HOME=/home/ubuntu
-
-WORKDIR $HOME
+USER ${USER}
