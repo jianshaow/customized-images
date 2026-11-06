@@ -1,4 +1,4 @@
-ARG TAG=2.4.1-cu124
+ARG TAG=2.14.1-cu132
 
 FROM jianshao/pt-rt-base:${TAG}
 
