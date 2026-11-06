@@ -5,8 +5,8 @@ if [ "$ollama_ver" == "" ]; then
 fi
 echo "Using ollama version: ${ollama_ver}"
 
-base_tag=24.04
-docker pull ubuntu:${base_tag}
+base_tag=3.14
+docker pull jianshao/py-dev-base:${base_tag}
 
 image=jianshao/ollama
 docker build -t ${image}:latest . --build-arg OLLAMA_VER=${ollama_ver} --build-arg TAG=${base_tag} $*
