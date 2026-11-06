@@ -3,8 +3,8 @@ ARG TAG=3.14
 
 FROM ${BASE_IMAGE}:${TAG}
 
-ARG PT_VER=2.12.1
-ARG CUDA_TAG=cu130
+ARG PT_VER=2.14.1
+ARG CUDA_TAG=cu132
 RUN pip install --no-cache-dir --upgrade pip && \
     pip install --no-cache-dir torch==${PT_VER} torchvision torchaudio \
     --index-url https://download.pytorch.org/whl/${CUDA_TAG}
