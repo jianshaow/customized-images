@@ -20,5 +20,4 @@ ENV OLLAMA_HOST=0.0.0.0:11434
 ENTRYPOINT [ "docker-entrypoint.sh" ]
 CMD [ "/bin/ollama", "serve" ]
 
-ARG USER
-USER ${USER}
+USER devel

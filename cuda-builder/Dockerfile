@@ -12,5 +12,4 @@ RUN dpkg -i cuda-keyring_all.deb && rm cuda-keyring_all.deb && apt-get update &&
     apt-get install -y --no-install-recommends ${NVCC_PKG} && \
     apt-get clean && rm -rf /var/lib/apt/lists/*
 
-ARG USER
-USER ${USER}
+USER devel

@@ -10,11 +10,10 @@ USER root
 RUN --mount=type=bind,source=packages.txt,target=packages.txt \
     apt-install.sh packages.txt
 
-ARG USER
-USER ${USER}
+USER devel
 ARG COMFYUI_VER=v0.3.40
-ADD --chown=${USER}:${USER} https://raw.githubusercontent.com/comfyanonymous/ComfyUI/${COMFYUI_VER}/requirements.txt /tmp/requirements.txt
-ADD --chown=${USER}:${USER} https://raw.githubusercontent.com/comfyanonymous/ComfyUI/${COMFYUI_VER}/manager_requirements.txt /tmp/manager_requirements.txt
+ADD --chown=devel:devel https://raw.githubusercontent.com/comfyanonymous/ComfyUI/${COMFYUI_VER}/requirements.txt /tmp/requirements.txt
+ADD --chown=devel:devel https://raw.githubusercontent.com/comfyanonymous/ComfyUI/${COMFYUI_VER}/manager_requirements.txt /tmp/manager_requirements.txt
 COPY --from=build $HOME/*.whl /tmp/
 
 RUN --mount=type=bind,source=requirements.txt,target=requirements.txt \
