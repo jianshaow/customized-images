@@ -9,6 +9,7 @@ RUN useradd -ms /bin/bash ${USER}
 
 COPY apt-install.sh /usr/local/bin/
 
+ARG USER
 USER ${USER}
 ENV HOME=/home/${USER}
 WORKDIR $HOME
