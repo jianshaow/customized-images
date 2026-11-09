@@ -1,9 +1,10 @@
 ARG BASE_IMAGE=python
 ARG TAG=3.14-slim
 
+ARG USER=devel
+
 FROM ${BASE_IMAGE}:${TAG}
 
-ARG USER=devel
 RUN useradd -ms /bin/bash ${USER}
 
 COPY apt-install.sh /usr/local/bin/
