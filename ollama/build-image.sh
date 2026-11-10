@@ -6,7 +6,7 @@ fi
 echo "Using ollama version: ${ollama_ver}"
 
 base_tag=3.12
-docker pull jianshao/py-dev-base:${base_tag}
+docker pull jianshao/py-rt-base:${base_tag}
 
 image=jianshao/ollama
 docker build -t ${image}:latest . --build-arg OLLAMA_VER=${ollama_ver} --build-arg TAG=${base_tag} $*
