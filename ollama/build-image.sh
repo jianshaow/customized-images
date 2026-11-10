@@ -5,7 +5,7 @@ if [ "$ollama_ver" == "" ]; then
 fi
 echo "Using ollama version: ${ollama_ver}"
 
-base_tag=3.14
+base_tag=3.12
 docker pull jianshao/py-dev-base:${base_tag}
 
 image=jianshao/ollama
