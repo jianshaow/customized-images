@@ -5,7 +5,7 @@ if [ "$python_ver" == "" ]; then
 fi
 echo "Using python version: ${python_ver}"
 
-base_image=jianshao/python-base
+base_image=jianshao/py-rt-base
 docker pull ${base_image}:${python_ver}
 
 image=jianshao/li-app-base
