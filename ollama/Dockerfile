@@ -1,4 +1,4 @@
-ARG BASE_IMAGE=jianshao/py-dev-base
+ARG BASE_IMAGE=jianshao/py-rt-base
 ARG TAG=3.12
 
 FROM ${BASE_IMAGE}:${TAG}
