@@ -1,6 +1,7 @@
 ca-certificates
 libopenblas0
 libvulkan1
+libatomic1
 bubblewrap
 curl
 wget
