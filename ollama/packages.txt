@@ -4,6 +4,5 @@ libvulkan1
 libatomic1
 bubblewrap
 curl
-wget
 zstd
 git
