@@ -3,6 +3,7 @@ libopenblas0
 libvulkan1
 libatomic1
 bubblewrap
+procps
 curl
 zstd
 git
